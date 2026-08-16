@@ -1,0 +1,20 @@
+{
+  "name": "store-inventory",
+  "version": "1.0.0",
+  "description": "Grocery store inventory search and per-vendor ordering",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "ingest": "python3 ingest/extract.py \"Order Forms\" > /dev/null && echo ok"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "nodemailer": "^9.0.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

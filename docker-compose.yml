@@ -1,0 +1,18 @@
+services:
+  inventory:
+    build: .
+    image: store-inventory:latest
+    container_name: store-inventory
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      # your vendor order forms — edit these on the host, then press "Refresh from files"
+      - ./Order Forms:/app/Order Forms
+      # SQLite database, vendor emails, order history
+      - inventory-data:/app/data
+
+volumes:
+  inventory-data:
